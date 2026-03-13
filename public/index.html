@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Painter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Hero Painter</h1>
+        <p>Choose a character, pick a color, and start painting.</p>
+      </header>
+
+      <main class="app-main">
+        <aside class="sidebar">
+          <h2>Characters</h2>
+          <div id="character-list" class="character-list">
+            <!-- Filled dynamically -->
+          </div>
+
+          <h2>Colors</h2>
+          <div id="palette" class="palette">
+            <!-- Filled dynamically -->
+          </div>
+
+          <div class="controls">
+            <div class="control-group">
+              <span>Tool</span>
+              <div class="tool-toggle">
+                <button id="tool-brush" class="btn tertiary active">Brush</button>
+                <button id="tool-fill" class="btn tertiary">Fill</button>
+              </div>
+            </div>
+            <label class="control-group">
+              <span>Brush size</span>
+              <input
+                id="brush-size"
+                type="range"
+                min="2"
+                max="40"
+                value="12"
+              />
+            </label>
+            <button id="clear-btn" class="btn secondary">Clear canvas</button>
+          </div>
+        </aside>
+
+        <section class="canvas-panel">
+          <div class="canvas-wrapper">
+            <canvas id="paint-layer"></canvas>
+            <canvas id="lineart-layer"></canvas>
+          </div>
+          <div class="canvas-footer">
+            <span id="current-character-label">Select a character to begin.</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+

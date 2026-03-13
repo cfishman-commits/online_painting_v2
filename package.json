@@ -1,0 +1,25 @@
+{
+  "name": "online_painting_v2",
+  "version": "1.0.0",
+  "description": "Online painting program with multiple characters and color palette.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "painting",
+    "canvas",
+    "express",
+    "coloring"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
