@@ -26,14 +26,14 @@ const characters = [
     imageUrl: '/assets/daredevil-lineart.png'
   },
   {
-    id: 'tmnt',
-    name: 'Ninja Turtle',
-    imageUrl: '/assets/tmnt-lineart.png'
+    id: 'hulk',
+    name: 'Hulk',
+    imageUrl: '/assets/hulk-lineart.png'
   },
   {
-    id: 'lego-batman',
-    name: 'Lego Batman',
-    imageUrl: '/assets/lego-batman-lineart.png'
+    id: 'thor',
+    name: 'Thor',
+    imageUrl: '/assets/thor-lineart.png'
   },
   {
     id: 'original-hero',

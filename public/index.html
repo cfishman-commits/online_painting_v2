@@ -31,6 +31,7 @@
               <div class="tool-toggle">
                 <button id="tool-brush" class="btn tertiary active">Brush</button>
                 <button id="tool-fill" class="btn tertiary">Fill</button>
+                <button id="tool-eraser" class="btn tertiary">Eraser</button>
               </div>
             </div>
             <label class="control-group">
@@ -43,20 +44,54 @@
                 value="12"
               />
             </label>
+            <div class="control-group">
+              <span>Zoom</span>
+              <div class="zoom-controls">
+                <button id="zoom-out" class="btn tertiary small">-</button>
+                <span id="zoom-label" class="zoom-label">100%</span>
+                <button id="zoom-in" class="btn tertiary small">+</button>
+              </div>
+            </div>
             <button id="clear-btn" class="btn secondary">Clear canvas</button>
+            <button id="save-btn" class="btn secondary">Save painting</button>
           </div>
         </aside>
 
         <section class="canvas-panel">
           <div class="canvas-wrapper">
-            <canvas id="paint-layer"></canvas>
-            <canvas id="lineart-layer"></canvas>
+            <div class="canvas-inner" id="canvas-inner">
+              <canvas id="paint-layer"></canvas>
+              <canvas id="lineart-layer"></canvas>
+            </div>
           </div>
           <div class="canvas-footer">
             <span id="current-character-label">Select a character to begin.</span>
           </div>
+          <section class="gallery">
+            <div class="gallery-header">
+              <h2>Saved gallery</h2>
+              <p>Saved paintings live here so you can clear your canvas and start fresh any time.</p>
+            </div>
+            <div id="gallery-grid" class="gallery-grid">
+              <!-- Thumbnails injected by app.js -->
+            </div>
+          </section>
         </section>
       </main>
+    </div>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-content" role="dialog" aria-modal="true">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close painting view">
+          ×
+        </button>
+        <img id="lightbox-image" class="lightbox-image" alt="Saved painting" />
+        <div class="lightbox-meta">
+          <span id="lightbox-title"></span>
+          <span id="lightbox-date"></span>
+        </div>
+      </div>
     </div>
 
     <script src="app.js"></script>
