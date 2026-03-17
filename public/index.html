@@ -9,12 +9,67 @@
   <body>
     <div class="app">
       <header class="app-header">
+        <div class="decor-surface" aria-hidden="true">
+          <div class="decor-icon decor-bolt">
+            <svg viewBox="0 0 64 64" role="presentation">
+              <path d="M38 2 12 34h18L24 62l28-36H34z" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="decor-icon decor-cap-shield">
+            <svg viewBox="0 0 64 64" role="presentation">
+              <circle cx="32" cy="32" r="18" fill="#ef4444" />
+              <circle cx="32" cy="32" r="13" fill="#facc15" />
+              <circle cx="32" cy="32" r="8" fill="#0f172a" />
+              <path
+                d="M32 24.5 33.7 29h4.8l-3.9 2.8L36.2 37 32 34.3 27.8 37l1.6-5.2-3.9-2.8h4.8z"
+                fill="#facc15"
+              />
+            </svg>
+          </div>
+        </div>
         <h1>Hero Painter</h1>
         <p>Choose a character, pick a color, and start painting.</p>
       </header>
 
       <main class="app-main">
         <aside class="sidebar">
+          <div class="decor-surface" aria-hidden="true">
+            <div class="decor-icon decor-bat-sidebar">
+              <svg viewBox="0 0 64 64" role="presentation">
+                <!-- Bow + arrow -->
+                <path
+                  d="M18 10c-4 6-6 14-6 22s2 16 6 22"
+                  fill="none"
+                  stroke="#e5e7eb"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M18 10c18 10 28 22 28 22s-10 12-28 22"
+                  fill="none"
+                  stroke="#e5e7eb"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 32h44"
+                  fill="none"
+                  stroke="#e5e7eb"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M54 32l-7-4m7 4-7 4"
+                  fill="none"
+                  stroke="#e5e7eb"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
           <h2>Characters</h2>
           <div id="character-list" class="character-list">
             <!-- Filled dynamically -->

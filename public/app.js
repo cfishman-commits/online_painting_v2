@@ -36,7 +36,7 @@
     '#ff1a1a',
     '#a855f7',
     '#38bdf8',
-    '#9ca3af'
+    '#6b7280'
   ];
 
   let characters = [];
@@ -109,6 +109,26 @@
     paintCtx.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
 
     applyZoom();
+  }
+
+  function resizeCanvasesToWrapper() {
+    const parent = lineCanvas.parentElement;
+    const rect = parent.getBoundingClientRect();
+    const width = rect.width || 800;
+    const height = rect.height || 600;
+
+    paintCanvas.width = width;
+    paintCanvas.height = height;
+    paintCtx.clearRect(0, 0, width, height);
+    paintCtx.fillStyle = '#ffffff';
+    paintCtx.fillRect(0, 0, width, height);
+
+    lineCanvas.width = width;
+    lineCanvas.height = height;
+    lineCtx.clearRect(0, 0, width, height);
+
+    applyZoom();
+    return { width, height };
   }
 
   function setCurrentColor(color) {
@@ -399,26 +419,16 @@
     const img = new Image();
     img.onload = () => resizeCanvasesToImage(img);
     img.onerror = () => {
-      // If image missing, just resize to a default size with blank background
-      const defaultWidth = 800;
-      const defaultHeight = 600;
-      paintCanvas.width = defaultWidth;
-      paintCanvas.height = defaultHeight;
-      paintCtx.clearRect(0, 0, defaultWidth, defaultHeight);
-      paintCtx.fillStyle = '#ffffff';
-      paintCtx.fillRect(0, 0, defaultWidth, defaultHeight);
-
-      lineCanvas.width = defaultWidth;
-      lineCanvas.height = defaultHeight;
-      lineCtx.clearRect(0, 0, defaultWidth, defaultHeight);
+      // If image missing, resize to fill the canvas area
+      const { width, height } = resizeCanvasesToWrapper();
       lineCtx.fillStyle = '#9ca3af';
       lineCtx.font = '20px system-ui, sans-serif';
       lineCtx.textAlign = 'center';
-      lineCtx.fillText('Add your own line-art image here.', defaultWidth / 2, defaultHeight / 2 - 12);
+      lineCtx.fillText('Add your own line-art image here.', width / 2, height / 2 - 12);
 
       // Extra helper text specifically for the Original Hero template
       if (character.id === 'original-hero') {
-        lineCtx.fillText('Clear canvas to start.', defaultWidth / 2, defaultHeight / 2 + 16);
+        lineCtx.fillText('Clear canvas to start.', width / 2, height / 2 + 16);
       }
     };
     img.src = character.imageUrl;

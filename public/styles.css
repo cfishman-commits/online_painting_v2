@@ -15,6 +15,82 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.decor-icon {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  opacity: 0.18;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.7));
+}
+
+.decor-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.decor-surface {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.app-header,
+.sidebar {
+  position: relative;
+  overflow: hidden;
+}
+
+.decor-bolt {
+  top: -20px;
+  left: 50%;
+  color: rgba(250, 204, 21, 1);
+  transform: translateX(-50%) rotate(12deg);
+}
+
+.decor-bat-sidebar {
+  bottom: -16px;
+  left: -18px;
+  width: 110px;
+  height: 110px;
+  opacity: 0.22;
+}
+
+.decor-cap-shield {
+  top: -6px;
+  right: 16px;
+  width: 80px;
+  height: 80px;
+  opacity: 0.2;
+}
+
+.decor-bat {
+  bottom: -22px;
+  left: -10px;
+  color: rgba(148, 163, 184, 1);
+  transform: rotate(-10deg);
+  opacity: 0.14;
+}
+
+.decor-dd {
+  top: 18px;
+  right: -14px;
+  color: rgba(248, 113, 113, 1);
+  transform: rotate(10deg);
+  opacity: 0.13;
+}
+
+.decor-bow {
+  top: 120px;
+  left: 14px;
+  width: 82px;
+  height: 82px;
+  color: rgba(196, 181, 253, 1);
+  transform: rotate(-14deg);
+  opacity: 0.12;
 }
 
 .app-header {
